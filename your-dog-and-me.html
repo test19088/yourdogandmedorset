@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Dog and Me | Dog Grooming in Broadstone, Poole</title>
+  <meta name="description" content="Professional dog grooming in Broadstone, Poole. Fully qualified and insured. Calm, one-to-one sessions tailored to your dog. Book online today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:        #1C3028;
+      --forest:      #2E5C41;
+      --amber:       #C47C20;
+      --amber-hover: #D48A25;
+      --linen:       #F5F1E8;
+      --sage-light:  #E8EFE9;
+      --text:        #2A2A2A;
+      --text-muted:  #6B7C71;
+      --white:       #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--linen);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: rgba(28,48,40,0.96);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--amber); }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-phone {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-phone:hover { color: white; }
+    .btn-nav {
+      background: var(--amber);
+      color: white;
+      text-decoration: none;
+      padding: .5rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: background .2s;
+    }
+    .btn-nav:hover { background: var(--amber-hover); }
+    @media (max-width: 500px) {
+      .nav-phone { display: none; }
+      .nav-logo { font-size: 1rem; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-paw {
+      position: absolute;
+      right: -80px;
+      bottom: -60px;
+      width: 520px;
+      height: 520px;
+      opacity: 0.055;
+      color: white;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .hero-paw { width: 280px; height: 280px; right: -30px; bottom: 0; }
+    }
+    .hero-content { max-width: 660px; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.2rem;
+    }
+    .hero-h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 1.4rem;
+    }
+    .hero-h1 em { font-style: italic; color: var(--amber); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.68);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.4rem;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--amber);
+      color: white;
+      text-decoration: none;
+      padding: .95rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background .2s, transform .2s;
+    }
+    .hero-cta:hover { background: var(--amber-hover); transform: translateY(-2px); }
+    .hero-note {
+      margin-top: 1rem;
+      font-size: .82rem;
+      color: rgba(255,255,255,.35);
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust {
+      background: var(--forest);
+      padding: 1.35rem 2rem;
+    }
+    .trust-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: .85rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      color: rgba(255,255,255,.9);
+      font-size: .88rem;
+      font-weight: 500;
+    }
+    .trust-item svg { color: var(--amber); flex-shrink: 0; }
+
+    /* ── SHARED SECTION STYLES ── */
+    .section-wrap { max-width: 960px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 3rem; }
+    .eyebrow {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: .65rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    /* ── SERVICES ── */
+    .services { padding: 5rem 2rem; background: var(--linen); }
+    .services .eyebrow { color: var(--forest); }
+    .services .section-title { color: var(--dark); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.4rem;
+    }
+    .svc-card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem 1.6rem;
+      border: 1px solid rgba(0,0,0,.06);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .svc-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    .svc-icon { width: 38px; height: 38px; color: var(--forest); margin-bottom: 1rem; }
+    .svc-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: .45rem;
+    }
+    .svc-desc { font-size: .88rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── ABOUT ── */
+    .about { padding: 5rem 2rem; background: var(--sage-light); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .about-body { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: .97rem; }
+    .about-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .about-li {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-weight: 500;
+      color: var(--dark);
+      font-size: .93rem;
+    }
+    .about-li svg { color: var(--forest); flex-shrink: 0; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .stat {
+      background: white;
+      border-radius: 8px;
+      padding: 1.65rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+    .stat-lbl { font-size: .82rem; color: var(--text-muted); font-weight: 500; }
+
+    /* ── REVIEWS ── */
+    .reviews { padding: 5rem 2rem; background: var(--dark); }
+    .reviews .eyebrow { color: var(--amber); }
+    .reviews .section-title { color: white; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.4rem;
+    }
+    .review-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+    .review-stars { color: var(--amber); letter-spacing: 2px; margin-bottom: .7rem; font-size: .95rem; }
+    .review-text {
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+      line-height: 1.72;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .review-author { font-weight: 600; color: rgba(255,255,255,.45); font-size: .82rem; }
+
+    /* ── BOOKING CTA ── */
+    .booking { padding: 5rem 2rem; background: var(--linen); text-align: center; }
+    .booking .eyebrow { color: var(--forest); }
+    .booking .section-title { color: var(--dark); margin-bottom: .9rem; }
+    .booking-sub { color: var(--text-muted); max-width: 460px; margin: 0 auto 2.4rem; font-size: 1rem; line-height: 1.7; }
+    .booking-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--forest);
+      color: white;
+      text-decoration: none;
+      padding: 1.05rem 2.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: background .2s, transform .2s;
+    }
+    .booking-btn:hover { background: var(--dark); transform: translateY(-2px); }
+
+    /* ── LOCATION ── */
+    .location { padding: 5rem 2rem; background: white; }
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .location-inner { grid-template-columns: 1fr; } }
+    .location-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      color: var(--dark);
+      margin-bottom: 1.6rem;
+    }
+    .loc-row { display: flex; gap: .75rem; margin-bottom: 1.3rem; align-items: flex-start; }
+    .loc-row svg { color: var(--forest); flex-shrink: 0; margin-top: 2px; }
+    .loc-text { font-size: .93rem; color: var(--text-muted); line-height: 1.65; }
+    .loc-text strong { display: block; color: var(--text); font-weight: 600; margin-bottom: .2rem; }
+    .loc-text a { color: var(--forest); text-decoration: none; font-weight: 600; }
+    .dir-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .88rem;
+      margin-top: .4rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color .2s;
+    }
+    .dir-link:hover { border-color: var(--forest); }
+    .map-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      height: 300px;
+      background: var(--sage-light);
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: white;
+      margin-bottom: .5rem;
+    }
+    .footer-logo span { color: var(--amber); }
+    .footer-addr { font-size: .83rem; color: rgba(255,255,255,.35); margin-bottom: .5rem; }
+    .footer-fb { color: rgba(255,255,255,.35); text-decoration: none; font-size: .83rem; transition: color .2s; }
+    .footer-fb:hover { color: white; }
+    .footer-copy { margin-top: 1.75rem; font-size: .78rem; color: rgba(255,255,255,.18); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Your Dog <span>&</span> Me</a>
+    <div class="nav-right">
+      <a href="tel:07398000000" class="nav-phone">07398 000 000</a>
+      <a href="#booking" class="btn-nav">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Paw watermark -->
+    <svg class="hero-paw" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="65" rx="22" ry="18"/>
+      <ellipse cx="22" cy="42" rx="12" ry="10"/>
+      <ellipse cx="42" cy="31" rx="12" ry="10"/>
+      <ellipse cx="62" cy="31" rx="12" ry="10"/>
+      <ellipse cx="80" cy="42" rx="12" ry="10"/>
+    </svg>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Dog Grooming · Broadstone, Poole</p>
+      <h1 class="hero-h1">Grooming they'll love.<br><em>Service you can trust.</em></h1>
+      <p class="hero-sub">Fully qualified and insured groomers providing a calm, relaxed, one-to-one experience tailored to your dog's exact needs.</p>
+      <a href="#booking" class="hero-cta">
+        Book an Appointment
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="hero-note">Based at 24 Dunyeats Road, Broadstone · 07398 000 000</p>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        Fully Qualified
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        1-to-1 Sessions
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        Calm Environment
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-wrap">
+      <div class="section-head">
+        <p class="eyebrow">What We Offer</p>
+        <h2 class="section-title">Our Grooming Services</h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="22" cy="42" rx="12" ry="10"/><ellipse cx="42" cy="31" rx="12" ry="10"/><ellipse cx="62" cy="31" rx="12" ry="10"/><ellipse cx="80" cy="42" rx="12" ry="10"/></svg>
+          <h3 class="svc-name">Full Groom</h3>
+          <p class="svc-desc">Bath, blow dry, clip and style, nail trim, and ear clean — everything your dog needs in one visit.</p>
+        </div>
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="22" cy="42" rx="12" ry="10"/><ellipse cx="42" cy="31" rx="12" ry="10"/><ellipse cx="62" cy="31" rx="12" ry="10"/><ellipse cx="80" cy="42" rx="12" ry="10"/></svg>
+          <h3 class="svc-name">Bath & Blow Dry</h3>
+          <p class="svc-desc">A thorough wash with professional shampoo, blow dried and brushed until perfectly fluffy.</p>
+        </div>
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="22" cy="42" rx="12" ry="10"/><ellipse cx="42" cy="31" rx="12" ry="10"/><ellipse cx="62" cy="31" rx="12" ry="10"/><ellipse cx="80" cy="42" rx="12" ry="10"/></svg>
+          <h3 class="svc-name">Clip & Style</h3>
+          <p class="svc-desc">Breed-specific styling or a practical pet trim — done exactly how you like it.</p>
+        </div>
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="22" cy="42" rx="12" ry="10"/><ellipse cx="42" cy="31" rx="12" ry="10"/><ellipse cx="62" cy="31" rx="12" ry="10"/><ellipse cx="80" cy="42" rx="12" ry="10"/></svg>
+          <h3 class="svc-name">Hand Stripping</h3>
+          <p class="svc-desc">Traditional hand stripping for wire-coated breeds to maintain proper coat texture and colour.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-wrap">
+      <div class="about-inner">
+        <div>
+          <h2 class="about-title">A groomer who actually cares about your dog</h2>
+          <p class="about-body">We know grooming can be stressful for some dogs — and their owners. Every appointment at Your Dog and Me is calm, quiet, and completely one-to-one. No other dogs around, no rushing. Just proper, attentive care tailored to your dog's temperament and coat type.</p>
+          <ul class="about-list">
+            <li class="about-li">
+              <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Fully qualified and insured groomers
+            </li>
+            <li class="about-li">
+              <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              One dog at a time — no kennels, no chaos
+            </li>
+            <li class="about-li">
+              <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Friendly, homely environment in Broadstone
+            </li>
+            <li class="about-li">
+              <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              All breeds and temperaments welcome
+            </li>
+          </ul>
+        </div>
+        <div class="stats-grid">
+          <div class="stat"><div class="stat-num">580+</div><div class="stat-lbl">Happy Customers</div></div>
+          <div class="stat"><div class="stat-num">5★</div><div class="stat-lbl">Facebook Rating</div></div>
+          <div class="stat"><div class="stat-num">1:1</div><div class="stat-lbl">Every Session</div></div>
+          <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Qualified & Insured</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="section-wrap">
+      <div class="section-head">
+        <p class="eyebrow">What Our Customers Say</p>
+        <h2 class="section-title">Tails are wagging</h2>
+      </div>
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Absolutely brilliant with my nervous spaniel. She came out looking amazing and was clearly relaxed the whole time. Best groomer we've found in Poole."</p>
+          <p class="review-author">— Sarah T., Broadstone</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Been bringing my Labrador here for over a year. Always a fantastic job and you can tell they genuinely care about the dogs, not just getting through the day."</p>
+          <p class="review-author">— Mike R., Poole</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"My dog used to dread grooming. She's perfectly happy here. The calm one-to-one approach makes all the difference — wouldn't go anywhere else now."</p>
+          <p class="review-author">— Emma L., Corfe Mullen</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+    <div class="section-wrap">
+      <p class="eyebrow">Ready to Book?</p>
+      <h2 class="section-title">Let's get your pup booked in</h2>
+      <p class="booking-sub">Choose a time that works for you. We'll confirm your slot and make sure everything is tailored to your dog before you arrive.</p>
+      <a href="https://calendly.com/yourdogandme" target="_blank" class="booking-btn">
+        Book an Appointment
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="contact">
+    <div class="section-wrap">
+      <div class="location-inner">
+        <div>
+          <h2 class="location-title">Find Us</h2>
+
+          <div class="loc-row">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="loc-text">
+              <strong>Address</strong>
+              24 Dunyeats Road, Broadstone<br>Poole, Dorset BH18 8AG
+            </div>
+          </div>
+
+          <div class="loc-row">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15A16 16 0 0015.06 16.3l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div class="loc-text">
+              <strong>Phone</strong>
+              <a href="tel:07398000000">07398 000 000</a>
+            </div>
+          </div>
+
+          <div class="loc-row">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <div class="loc-text">
+              <strong>Opening Hours</strong>
+              Monday – Saturday: 9am – 5pm<br>Sunday: Closed
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=24+Dunyeats+Road+Broadstone+Poole+BH18+8AG" target="_blank" class="dir-link">
+            Get Directions
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=24+Dunyeats+Road+Broadstone+Poole+BH18+8AG&output=embed"
+            allowfullscreen
+            loading="lazy"
+            title="Your Dog and Me location">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Your Dog <span>&</span> Me</div>
+    <p class="footer-addr">24 Dunyeats Road, Broadstone, Poole, BH18 8AG</p>
+    <a href="https://facebook.com/yourdogandmedorset" target="_blank" class="footer-fb">Facebook · @yourdogandmedorset</a>
+    <p class="footer-copy">© 2025 Your Dog and Me. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
